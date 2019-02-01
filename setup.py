@@ -5,7 +5,7 @@ from setuptools import setup, find_packages, Extension
 hv_module = Extension("chocolate.mo.hv",
                       sources=["chocolate/mo/_hv.c", "chocolate/mo/hv.cpp"],
                       optional=True,
-                      extra_compile_args = ["-mmacosx-version-min=10.9"])
+                      extra_compile_args = ["-std=c++11", "-stdlib=libc++"])
 
 setup(
     name="chocolate",
