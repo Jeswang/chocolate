@@ -2,7 +2,10 @@ import sys
 
 from setuptools import setup, find_packages, Extension
 
-hv_module = Extension("chocolate.mo.hv", sources=["chocolate/mo/_hv.c", "chocolate/mo/hv.cpp"], optional=True)
+hv_module = Extension("chocolate.mo.hv",
+                      sources=["chocolate/mo/_hv.c", "chocolate/mo/hv.cpp"],
+                      optional=True,
+                      extra_compile_args = ["-mmacosx-version-min=10.9"])
 
 setup(
     name="chocolate",
